@@ -1,48 +1,30 @@
 import { useState } from 'react';
+import HomePage from './imports/HomePage'; 
 
 type Page = 'home' | 'about' | 'projects' | 'articles' | 'que';
 
 export default function App() {
-
   const [currentPage, setCurrentPage] = useState<Page>('home');
-
 
   const handleNavigate = (page: Page) => {
     setCurrentPage(page);
   };
 
- 
   const renderDesktopPage = () => {
     switch (currentPage) {
       case 'home':
-
-      return (
-          <div>
-            <h1>Home Page</h1>
-            <nav>
-              <button onClick={() => handleNavigate('about')}>Go to About</button>
-            </nav>
-          </div>
-        );
+        return <HomePage onNavigate={handleNavigate} />;
+      
       case 'about':
-        return (
-          <div>
-            <h1>About Page</h1>
-            <nav>
-              <button onClick={() => handleNavigate('home')}>Go to Home</button>
-            </nav>
-          </div>
-        );
-
-        default:
-        return (
-          <div>
-            <h1>Home Page</h1>
-            <nav>
-              <button onClick={() => handleNavigate('about')}>Go to About</button>
-            </nav>
-          </div>
-        );
+        return <div>About Page Placeholder</div>;
+      case 'projects':
+        return <div>Projects Page Placeholder</div>;
+      case 'articles':
+        return <div>Articles Page Placeholder</div>;
+      case 'que':
+        return <div>Que Page Placeholder</div>;
+      default:
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
