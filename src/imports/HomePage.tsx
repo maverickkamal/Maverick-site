@@ -1,8 +1,8 @@
 import svgPaths from "./svg-q6e9qrbcqo";
-import imgGitHub from "../assets/40861a30648597afb147755edadadd3a00ca091b.png";
-import imgInstagram from "../assets/60c17b17a9a341bada62fd625fbd13b8f6d82a03.png";
-import imgX from "../assets/fda34eeffa7a23fd8d190863b6131df3711972e0.png";
-import img from "../assets/06f09a5283d23e6997b2c7ecc7440c9640f49b88.png";
+import imgGitHub from "figma:asset/40861a30648597afb147755edadadd3a00ca091b.png";
+import imgInstagram from "figma:asset/60c17b17a9a341bada62fd625fbd13b8f6d82a03.png";
+import imgX from "figma:asset/fda34eeffa7a23fd8d190863b6131df3711972e0.png";
+import img from "figma:asset/06f09a5283d23e6997b2c7ecc7440c9640f49b88.png";
 import { imgK, imgC, imgI, imgR, imgE, imgV, imgA, imgM, imgK1, imgC1, imgI1, imgR1, imgE1, imgV1, imgA1, imgM1, imgK2, imgC2, imgI2, imgR2, imgE2, imgV2, imgA2, imgM2, imgK3, imgC3, imgI3, imgR3, imgE3, imgV3, imgA3, imgM3 } from "./maverick-svg";
 type FullLogoProps = {
   className?: string;
