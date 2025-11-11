@@ -1,6 +1,6 @@
 import React from 'react';
-import FullLogoSvg from '../../assets/Full_logo.svg';
-import OutlineLogoSvg from '../../assets/Logo_Outline.svg';
+import FullLogoSvg from '../../assets/images/Full logo.svg';
+import OutlineLogoSvg from '../../assets/images/Logo Outline.svg';
 
 type LogoVariant = 'full' | 'outline';
 type LogoColor = 'black' | 'white' | 'green-light' | 'green-dark';
