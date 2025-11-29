@@ -3,6 +3,7 @@ import HomePage from "./pages/desktop/HomePage";
 import About from "./pages/desktop/About";
 import Projects from "./pages/desktop/Projects";
 import Articles from "./pages/desktop/Articles";
+import Que from "./pages/desktop/Que";
 
 type Page = 'home' | 'about' | 'projects' | 'articles' | 'que';
 
@@ -26,6 +27,8 @@ export default function App() {
               return <Projects onNavigate={handleNavigate} />;
             case 'articles':
               return <Articles onNavigate={handleNavigate} />;
+            case 'que':
+              return <Que onNavigate={handleNavigate} />;
             default:
               return <HomePage onNavigate={handleNavigate} />;
         }
