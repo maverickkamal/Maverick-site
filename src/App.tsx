@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HomePage from "./pages/desktop/HomePage";
+import About from "./pages/desktop/About";
 
 type Page = 'home' | 'about' | 'projects' | 'articles' | 'que';
 
@@ -18,6 +19,8 @@ export default function App() {
         switch (currentPage) {
             case 'home':
               return <HomePage onNavigate={handleNavigate} />;
+            case 'about':
+              return <About onNavigate={handleNavigate} />;
             default:
               return <HomePage onNavigate={handleNavigate} />;
         }
