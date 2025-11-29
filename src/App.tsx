@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import HomePage from "./pages/desktop/HomePage";
 import About from "./pages/desktop/About";
+import Projects from "./pages/desktop/Projects";
 
 type Page = 'home' | 'about' | 'projects' | 'articles' | 'que';
 
@@ -21,6 +22,8 @@ export default function App() {
               return <HomePage onNavigate={handleNavigate} />;
             case 'about':
               return <About onNavigate={handleNavigate} />;
+            case 'projects':
+              return <Projects onNavigate={handleNavigate} />;
             default:
               return <HomePage onNavigate={handleNavigate} />;
         }
