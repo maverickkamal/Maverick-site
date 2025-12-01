@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+## Maverick
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You will be wondering what inspired this website, well it was a combination of things. At first I was thinking of something similar to paper like the one I always have with me (my journal lol). I was researching themes and colors with fonts to match my taste. I am someone that have a variable test so i ended up using a green color as my primary color and an off white bg. I have red and yellow that varies based on which bg i go with. It still gives the paper aesthetic but kinda with my twist. I designed everything on figma and adobe illustrator. I did my logo from not scratch just improved the one I got from a friend. But the color and typography were built from scratch. at the end of my website I will tell why I make these choices. Implementing the code was a very big challenge for me even with the help of figma to code. my big mistake was debug the shits it gave me which wasted my time without any meaningful progress. I have to restart from scratch.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Favorite grid pattern
+- pixel texture 
+- unstable 2d shapes 
+- tag cloud (will have to refix it)
+- favorite navbar hehe
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Home
+- About
+- Projects
+- Articles
+- Que?
 
-## Expanding the ESLint configuration
+# what is the Que page?
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+well kinda random but it's a page that will have a lot of questions and answers about my life and my thoughts.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*still building can't say much*
