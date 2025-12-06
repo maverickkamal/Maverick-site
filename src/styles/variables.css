@@ -1,0 +1,39 @@
+:root {
+    --background: #F7F4ED;
+    --foreground: #1A1A1A;
+    --primary: #006B3D;
+    --destructive: #C91F1F;
+    --warning: #8A5500;
+    --border: #BFBFBF;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-work-sans: 'Work Sans', sans-serif;
+    --font-syne: 'Syne', sans-serif;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --sidebar-width: 250px;
+    --left-spacing: 240px;
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+}
+
+/* Responsive Breakpoints (as comments for reference)
+   --breakpoint-sm: 640px
+   --breakpoint-md: 768px
+   --breakpoint-lg: 1024px
+   --breakpoint-xl: 1280px
+*/
+
+@media (max-width: 768px) {
+    :root {
+        --left-spacing: 25px;
+    }
+}
