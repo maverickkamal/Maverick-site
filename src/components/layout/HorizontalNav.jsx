@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import FullLogo from '../../assets/images/Full logo.svg';
+import Logo from '../common/Logo';
 import useMenuState from '../../hooks/useMenuState';
+import styles from './HorizontalNav.module.css';
 
 const HorizontalNav = () => {
   const { isOpen, toggle } = useMenuState();
@@ -14,22 +15,24 @@ const HorizontalNav = () => {
   ];
 
   return (
-    <header style={{ paddingBottom: '20px', display: 'flex', flexDirection: 'column' }}>
-      <div className="flex flex-col gap-4">
-        <div className="logo logo-toggle" onClick={toggle} role="button" tabIndex={0} aria-label="Toggle navigation">
-          <img
-            src={FullLogo}
-            alt="Maverick Logo"
+    <header className={styles.header}>
+      <div className={styles.content}>
+        <div className={styles.logoWrapper}>
+          <Logo
+            isOpen={isOpen}
+            onClick={toggle}
+            className={styles.logoToggle}
           />
         </div>
 
-        <nav className="desktop-nav">
-          <ul className="nav-horizontal">
-            {navItems.map((item) => (
-              <li key={item.to}>
+        <nav className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
+          <ul className={styles.navHorizontal}>
+            {navItems.map((item, index) => (
+              <li key={item.to} className={styles.navItem} style={{ '--i': index }}>
                 <NavLink
                   to={item.to}
-                  className={({ isActive }) => isActive ? 'active' : ''}
+                  className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
+                  onClick={() => window.innerWidth <= 768 && toggle()}
                 >
                   {item.label}
                 </NavLink>
@@ -37,52 +40,7 @@ const HorizontalNav = () => {
             ))}
           </ul>
         </nav>
-
-        <div className={`nav-overlay ${isOpen ? 'open' : ''}`}>
-          <div className="logo" onClick={toggle}>
-            <img src={FullLogo} alt="Maverick Logo" />
-          </div>
-          <nav>
-            <ul className="flex flex-col gap-6 text-center">
-              {navItems.map((item, index) => (
-                <li key={item.to} className={`animate-fade-in-up stagger-${index + 1}`}>
-                  <NavLink
-                    to={item.to}
-                    className={({ isActive }) => isActive ? 'active' : ''}
-                    onClick={toggle}
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
       </div>
-
-      <style>{`
-        .desktop-nav {
-          display: block;
-        }
-        
-        .nav-overlay {
-          display: none;
-        }
-        
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none;
-          }
-          
-          .nav-overlay {
-            display: flex;
-          }
-          
-          .logo-toggle {
-            cursor: pointer;
-          }
-        }
-      `}</style>
     </header>
   );
 };

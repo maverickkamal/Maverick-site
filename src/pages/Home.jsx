@@ -7,7 +7,7 @@ const Home = () => {
         <section className="hero">
             <div className="hero-content">
                 <div className="hero-title">
-                    <TitleSvg style={{ width: '100%', height: 'auto' }} />
+                    <TitleSvg />
                 </div>
 
                 <p className="hero-tagline">
@@ -23,7 +23,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}>
+            <div className="hero-shapes-wrapper">
                 <picture>
                     <source media="(max-width: 768px)" srcSet={ShapesMobile} />
                     <img

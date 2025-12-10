@@ -135,11 +135,72 @@ footer {
     padding-left: var(--left-spacing);
   }
 
+  .app-layout.menu-open .main-content {
+    /* Shrink content when menu is open */
+    transform: scale(0.5);
+    transform-origin: center center;
+    margin-top: 0;
+    /* Ensure z-index is lower than menu */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* backup scale for hero components if main-content scale has issues */
+  .app-layout.menu-open .hero-content,
+  .app-layout.menu-open .hero-shapes {
+    transform: scale(0.8);
+    /* Additional scaling if needed, or redundancy */
+    transform-origin: center center;
+    transition: transform 0.4s ease;
+  }
+
+  .main-content {
+    /* Ensure it takes full height for centering */
+    flex: 1;
+    min-height: calc(100vh - 80px);
+    /* fallback */
+  }
+
+  .main-content {
+    /* Ensure smooth transition for the push and the scale */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Force horizontal nav to be horizontal on mobile */
+  .nav-horizontal {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    /* Allow wrapping */
+    overflow-x: visible;
+    /* No scroll */
+    gap: 1rem !important;
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nav-horizontal a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  /* Hide scrollbar for cleaner look */
+  .nav-horizontal::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-horizontal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .sidebar {
     position: relative;
     width: 100%;
     height: auto;
-    min-height: auto;
+    min-height: 0;
     max-height: none;
     flex-direction: row;
     padding-bottom: 20px;
@@ -151,7 +212,7 @@ footer {
     width: 100%;
     padding-left: 0;
     padding-top: 20px;
-    min-height: auto;
+    min-height: 0;
     grid-row: auto;
   }
 
