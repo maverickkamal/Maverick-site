@@ -56,6 +56,28 @@
     color: var(--primary);
 }
 
+.hero-social {
+    margin-top: var(--spacing-xl);
+}
+
+.hero-quote {
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--foreground);
+    opacity: 0.8;
+    max-width: 600px;
+    text-align: center;
+    border: none;
+    padding: 0;
+    quotes: none;
+}
+
+.hero-quote::before,
+.hero-quote::after {
+    content: '';
+}
+
 .hero-shapes {
     position: absolute;
     top: 233px;
@@ -96,6 +118,19 @@
         gap: var(--spacing-md);
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .hero-social {
+        margin-top: var(--spacing-lg);
+    }
+
+    .hero-quote {
+        font-size: 0.9rem;
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero-social {
+        margin-top: var(--spacing-md);
     }
 }
 

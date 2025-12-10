@@ -1,4 +1,5 @@
 import TitleSvg from '../components/TitleSvg';
+import SocialLinks from '../components/common/SocialLinks';
 import ShapesDesktop from '../assets/images/shapes.svg';
 import ShapesMobile from '../assets/images/shapesMobile.svg';
 
@@ -21,6 +22,14 @@ const Home = () => {
                     <span>dl</span>
                     <span>ai</span>
                 </div>
+
+                <div className="hero-social">
+                    <SocialLinks />
+                </div>
+
+                <blockquote className="hero-quote">
+                    "Human life is more important than politics, religion or culture"
+                </blockquote>
             </div>
 
             <div className="hero-shapes-wrapper">
