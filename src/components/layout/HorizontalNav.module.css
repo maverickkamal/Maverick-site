@@ -38,13 +38,31 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--foreground);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast), letter-spacing var(--transition-fast);
   position: relative;
   text-decoration: none;
+  display: inline-block;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width var(--transition-normal) ease;
 }
 
 .navLink:hover {
   color: var(--primary);
+  transform: scale(1.02);
+  letter-spacing: 0.5px;
+}
+
+.navLink:hover::before {
+  width: 100%;
 }
 
 .navLink:not(.active) {
@@ -54,6 +72,10 @@
 .navLink.active {
   color: var(--primary);
   border-bottom: none;
+}
+
+.navLink.active::before {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

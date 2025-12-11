@@ -4,11 +4,21 @@
   display: inline-block;
   cursor: pointer;
   position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.logoContainer:active {
+  transform: scale(0.95);
+}
+
+.logoContainer:hover {
+  transform: scale(1.05);
 }
 
 .logoImage {
   width: 100%;
   height: auto;
+  transition: transform var(--transition-normal);
 }
 
 .logoOutline {
@@ -16,20 +26,24 @@
   top: 0;
   left: 0;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1);
 }
 
 .logoFull {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1);
 }
 
 .logoOutline.hidden {
   opacity: 0;
+  transform: scale(0.95);
 }
 
 .logoFull.visible {
   opacity: 1;
+  transform: scale(1.02);
 }
 
 @media (min-width: 769px) {
