@@ -1,0 +1,136 @@
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    width: calc(12vw + 305.2px);
+    max-width: 100%;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-title svg {
+    width: 100%;
+    height: auto;
+}
+
+.hero-shapes-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-tagline {
+    font-size: 1.8rem;
+    font-family: var(--font-outfit);
+    color: var(--foreground);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+}
+
+.hero-keywords {
+    display: flex;
+    gap: var(--spacing-xl);
+    font-family: var(--font-syne);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.hero-social {
+    margin-top: var(--spacing-xl);
+}
+
+.hero-quote {
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--foreground);
+    opacity: 0.8;
+    max-width: 600px;
+    text-align: center;
+    border: none;
+    padding: 0;
+    quotes: none;
+}
+
+.hero-quote::before,
+.hero-quote::after {
+    content: '';
+}
+
+.hero-shapes {
+    position: absolute;
+    top: 233px;
+    right: 67px;
+    width: auto;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-shapes {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        width: 100%;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .menu-open .hero-title {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    .hero-tagline {
+        font-size: 1.4rem;
+    }
+
+    .hero-keywords {
+        font-size: 1.2rem;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-social {
+        margin-top: var(--spacing-lg);
+    }
+
+    .hero-quote {
+        font-size: 0.9rem;
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero-social {
+        margin-top: var(--spacing-md);
+    }
+}
+

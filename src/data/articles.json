@@ -1,3 +1,59 @@
 {
-    "articles": []
+    "articles": [
+        {
+            "id": "id-1",
+            "title": "Is Critical Thinking and Time Management a Knowledge Curse? (Revised)",
+            "excerpt": "We become so focused on “doing things right” according to our schedules that we miss opportunities to “do the right things” that might come organically. I was much more productive and learned better when I approached studying with more flexibility.",
+            "link": "https://maverickkamal.medium.com/is-critical-thinking-and-time-management-a-knowledge-curse-revised-af5c4087e7ae",
+            "tags": ["learning", "time management", "critical thinking"],
+            "publishedDate": "2024-11-30",
+            "readTime": "5 min read",
+            "coverImage": "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*I8g4rWwj8H1K4OmZ.png",
+            "platform": "Medium"
+        },
+        {
+            "id": "id-2",
+            "title": "the paradox of preparedness: when planning becomes the problem — v3",
+            "excerpt": "what if sometimes our drive to be perfectly prepared becomes the very thing that holds us back? what if the meticulous planning, the endless scenarios, the perfectly scheduled days become a beautiful, comforting trap?",
+            "link": "https://maverickkamal.medium.com/the-paradox-of-preparedness-when-planning-becomes-the-problem-v3-ddc4d1539a7e",
+            "tags": ["learning", "meta learning", "critical thinking", "psychology"],
+            "publishedDate": "2025-04-21",
+            "readTime": "8 min read",
+            "coverImage": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*o-TCute8Zrk3zekm4PsZvA.jpeg",
+            "platform": "Medium"
+        },
+        {
+            "id": "id-3",
+            "title": "Building Glycemic Sentinel: A Deep Dive into Our Proactive Multi-Agent AI Swarm",
+            "excerpt": "Managing T1D is a problem of immense complexity. It’s a constant negotiation between dozens of variables: glucose levels, meal composition (carbs, fats, proteins), exercise intensity and duration, stress, illness, insulin on board, and individual insulin sensitivity that can change by the hour.",
+            "link": "https://maverickkamal.medium.com/building-glycemic-sentinel-a-deep-dive-into-our-proactive-multi-agent-ai-swarm-593c62709d72",
+            "tags": ["AI Agents", "AI Swarm", "Google ADK", "Hackathons", "Healthcare"],
+            "publishedDate": "2025-06-23",
+            "readTime": "5 min read",
+            "coverImage": "",
+            "platform": "Medium"
+        },
+        {
+            "id": "id-1",
+            "title": "Fourfold Union: The First-Time Hackathon Winning Recipe",
+            "excerpt": "Like most days as a Crimson Ambassador, I always check the opportunity channel in the Crimson Ambassador WhatsApp group, where I support or join any student-led Organization. But something awesome happened on August 18. Anas made an announcement of the Warheads hackathon in the group which set off a series of events that ended in an “unexpected” triumph.",
+            "link": "https://maverickkamal.medium.com/fourfold-union-the-first-time-hackathon-winning-recipe-05faf9e65c65",
+            "tags": ["Hackathons", "teamwork", "AI"],
+            "publishedDate": "2024-09-19",
+            "readTime": "5 min read",
+            "coverImage": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*rSASWVmqvi5lDvrEqe2wKQ.gif",
+            "platform": "Medium"
+        },
+        {
+            "id": "id-1",
+            "title": "The Illusions of Learning — Why Your Brain Might Be Fooling You",
+            "excerpt": "Our brains are energy-saving machines. They like shortcuts, which sometimes leads us to think we’ve got something all figured out when we’ve barely scratched the surface. These are the illusions of learning, and they sneak up on us in three major forms: competence, familiarity, and productivity.",
+            "link": "https://maverickkamal.substack.com/p/the-illusions-of-learning-why-your",
+            "tags": ["learning", "meta learning", "critical thinking"],
+            "publishedDate": "2024-10-22",
+            "readTime": "5 min read",
+            "coverImage": "https://substackcdn.com/image/fetch/$s_!En9y!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa94b9f0-b011-45a3-ae2f-5dd9d080769a_1024x768.png",
+            "platform": "substack"
+        }
+    ]
 }
