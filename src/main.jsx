@@ -11,7 +11,7 @@ import './styles/hero.css'
 import './styles/about.css'
 import './styles/projects.css'
 import './styles/articles.css'
-import './styles/pages.css'
+import './styles/que.css'
 
 import App from './App.jsx'
 

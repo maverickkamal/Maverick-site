@@ -76,12 +76,21 @@
 }
 
 .navLink.active {
-  color: var(--primary);
+  color: var(--primary) !important;
   border-bottom: none;
 }
 
 .navLink.active::before {
   width: 100%;
+  background-color: var(--primary) !important;
+}
+
+.navLink.queLink.active {
+  color: var(--destructive) !important;
+}
+
+.navLink.queLink.active::before {
+  background-color: var(--destructive) !important;
 }
 
 @media (max-width: 768px) {

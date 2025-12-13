@@ -28,7 +28,7 @@ const VerticalNav = ({ isOpen, toggle }) => {
               <li key={item.to} className={styles.navItem} style={{ '--i': index }}>
                 <NavLink
                   to={item.to}
-                  className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
+                  className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''} ${item.to === '/que' ? styles.queLink : ''}`}
                   onClick={() => window.innerWidth <= 768 && toggle()}
                 >
                   {item.label}
