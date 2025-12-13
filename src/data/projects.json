@@ -1,3 +1,43 @@
 {
-    "projects": []
+    "projects": [
+        {
+            "id": "id-1",
+            "name": "Visual Timer",
+            "about": "An extension that changes the color of a website base on time spent",
+            "link": "https://github.com/maverickkamal/Visual-timer",
+            "liveDemo": "https://chromewebstore.google.com/detail/visual-timer/onghkchodkbeafjaakkhnpmmbefbcpdl",
+            "languagesUsed": ["JavaScript", "HTML", "CSS"],
+            "image": "https://lh3.googleusercontent.com/GpcFUPWjCLQXaw7dkevUAbFZEuTCjcgr78L3INu82P5ZGmJZaYfdXUerQBvXfpoFKlKFfj62Wj1uoEYFd1dxIKL3Nw=s120",
+            "featured": true,
+            "status": "active",
+            "year": 2025,
+            "category": "extension"
+          },
+          {
+            "id": "id-2",
+            "name": "FlashForge",
+            "about": "API for flashcard management with AI generation capabilities",
+            "link": "https://github.com/maverickkamal/FlashForge",
+            "liveDemo": "https://github.com/maverickkamal/FlashForge",
+            "languagesUsed": ["Python"],
+            "image": "",
+            "featured": true,
+            "status": "buggy",
+            "year": 2025,
+            "category": "api"
+          },
+          {
+            "id": "id-3",
+            "name": "Stylfit",
+            "about": "Stylfit is a revolutionary AI-powered personal stylist app that takes the guesswork out of getting dressed.",
+            "link": "https://github.com/maverickkamal/Stylfit",
+            "liveDemo": "https://stylfit-team.streamlit.app/",
+            "languagesUsed": ["Python", "CSS"],
+            "image": "",
+            "featured": true,
+            "status": "archived",
+            "year": 2024,
+            "category": "ai"
+          }
+    ]
 }
