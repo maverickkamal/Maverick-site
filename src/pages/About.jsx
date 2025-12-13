@@ -191,7 +191,7 @@ const About = () => {
                                 </span>
                             ))}
                         </div>
-                    </div>
+            </div>
 
                     <div className="skills-category">
                         <h3>Interests</h3>
@@ -200,7 +200,7 @@ const About = () => {
                                 <span key={interest} className="skill-tag interest-tag">{interest}</span>
                             ))}
                         </div>
-                    </div>
+            </div>
                 </div>
             </section>
         </div>

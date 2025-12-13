@@ -20,7 +20,9 @@ const useMenuState = () => {
         };
 
         document.addEventListener('keydown', handleEscape);
-        return () => document.removeEventListener('keydown', handleEscape);
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+        };
     }, [isOpen, close]);
 
 

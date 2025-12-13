@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 const ReactionTime = ({ onClose }) => {
     const [gameState, setGameState] = useState('waiting');
@@ -9,6 +9,14 @@ const ReactionTime = ({ onClose }) => {
     });
     const startTimeRef = useRef(null);
     const timeoutRef = useRef(null);
+    
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     const startGame = useCallback(() => {
         setGameState('ready');

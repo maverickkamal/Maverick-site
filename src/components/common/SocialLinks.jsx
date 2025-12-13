@@ -1,4 +1,3 @@
-import React from 'react';
 import GitHubIcon from '../../assets/images/GitHub.png';
 import InstagramIcon from '../../assets/images/Instagram.png';
 import XIcon from '../../assets/images/X.png';

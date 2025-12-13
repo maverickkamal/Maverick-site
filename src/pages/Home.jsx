@@ -16,11 +16,11 @@ const Home = () => {
                 </p>
 
                 <div className="hero-keywords">
-                    <span>bio</span>
-                    <span>ml</span>
-                    <span>bme</span>
-                    <span>dl</span>
-                    <span>ai</span>
+                    <span className="keyword-bio">bio</span>
+                    <span className="keyword-ml">ml</span>
+                    <span className="keyword-bme">bme</span>
+                    <span className="keyword-dl">dl</span>
+                    <span className="keyword-ai">ai</span>
                 </div>
 
                 <div className="hero-social">

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ArticleCard = ({ article }) => {
     const { title, excerpt, link, tags, publishedDate, readTime, coverImage, platform } = article;
 

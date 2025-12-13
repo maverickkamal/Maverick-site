@@ -1,4 +1,3 @@
-import React from 'react';
 import FullLogo from '../../assets/images/Full logo.svg';
 import LogoOutline from '../../assets/images/Logo Outline.svg';
 import styles from './Logo.module.css';

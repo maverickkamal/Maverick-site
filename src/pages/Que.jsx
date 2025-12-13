@@ -6,7 +6,14 @@ import TypingSpeed from '../components/games/TypingSpeed';
 import XIcon from '../assets/images/X.png';
 import InstagramIcon from '../assets/images/Instagram.png';
 
-const FORMSUBMIT_EMAIL = '0d70ea2d43701f7bbb5bdfd4fa024342';
+const FORMSUBMIT_EMAIL = import.meta.env.VITE_FORMSUBMIT_EMAIL;
+
+const CURATED_OPINIONS = [
+    "AI and its applications in healthcare",
+    "The future of bioinformatics in personalized medicine",
+    "Open-source tools for scientific research",
+    "Learning to code changed everything for me",
+];
 
 const Que = () => {
     const [activeGame, setActiveGame] = useState(null);
@@ -18,13 +25,18 @@ const Que = () => {
     const messageFormRef = useRef(null);
     const friendFormRef = useRef(null);
     const opinionFormRef = useRef(null);
-
-    const curatedOpinions = [
-        "AI and its applications in healthcare",
-        "The future of bioinformatics in personalized medicine",
-        "Open-source tools for scientific research",
-        "Learning to code changed everything for me",
-    ];
+    const timeoutRefs = useRef({ message: null, friend: null, opinion: null });
+    
+    useEffect(() => {
+        return () => {
+            Object.keys(timeoutRefs.current).forEach(key => {
+                if (timeoutRefs.current[key]) {
+                    clearTimeout(timeoutRefs.current[key]);
+                    timeoutRefs.current[key] = null;
+                }
+            });
+        };
+    }, []);
 
     const isSpam = (formData) => {
         if (formData.get('_honey')) return true;
@@ -44,7 +56,9 @@ const Que = () => {
         if (isSpam(formData)) {
             setStatus('sent'); 
             formRef.current?.reset();
-            setTimeout(() => setStatus(null), 3000);
+            timeoutRefs.current[formType] = setTimeout(() => {
+                setStatus(null);
+            }, 3000);
             return;
         }
 
@@ -62,14 +76,18 @@ const Que = () => {
             if (response.ok) {
                 setStatus('sent');
                 formRef.current?.reset();
-                setTimeout(() => setStatus(null), 3000);
+                timeoutRefs.current[formType] = setTimeout(() => {
+                    setStatus(null);
+                }, 3000);
             } else {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
             console.error('Form error:', error);
             setStatus('error');
-            setTimeout(() => setStatus(null), 3000);
+            timeoutRefs.current[formType] = setTimeout(() => {
+                setStatus(null);
+            }, 3000);
         }
     };
 
@@ -301,7 +319,7 @@ const Que = () => {
                     </p>
 
                     <div className="opinions-list">
-                        {curatedOpinions.map((opinion, index) => (
+                        {CURATED_OPINIONS.map((opinion, index) => (
                             <div key={index} className="opinion-item">
                                 <span className="opinion-quote">"</span>
                                 {opinion}

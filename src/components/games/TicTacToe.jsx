@@ -1,23 +1,33 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+
+const WINNING_LINES = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+];
+
+const calculateWinner = (squares) => {
+    for (let [a, b, c] of WINNING_LINES) {
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            return squares[a];
+        }
+    }
+    return null;
+};
 
 const TicTacToe = ({ onClose }) => {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [isXNext, setIsXNext] = useState(true);
     const [gameStatus, setGameStatus] = useState('playing');
-
-    const calculateWinner = (squares) => {
-        const lines = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8],
-            [0, 3, 6], [1, 4, 7], [2, 5, 8],
-            [0, 4, 8], [2, 4, 6]
-        ];
-        for (let [a, b, c] of lines) {
-            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                return squares[a];
+    const timeoutRef = useRef(null);
+    
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
             }
-        }
-        return null;
-    };
+        };
+    }, []);
 
     const minimax = useCallback((squares, isMaximizing) => {
         const winner = calculateWinner(squares);
@@ -84,16 +94,17 @@ const TicTacToe = ({ onClose }) => {
 
         setIsXNext(false);
 
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
             const aiMove = getAIMove([...newBoard]);
             if (aiMove !== null) {
-                newBoard[aiMove] = 'O';
-                setBoard([...newBoard]);
+                const updatedBoard = [...newBoard];
+                updatedBoard[aiMove] = 'O';
+                setBoard(updatedBoard);
 
-                const aiWinner = calculateWinner(newBoard);
+                const aiWinner = calculateWinner(updatedBoard);
                 if (aiWinner) {
                     setGameStatus('lost');
-                } else if (newBoard.every(s => s !== null)) {
+                } else if (updatedBoard.every(s => s !== null)) {
                     setGameStatus('draw');
                 }
             }
@@ -102,6 +113,10 @@ const TicTacToe = ({ onClose }) => {
     };
 
     const resetGame = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
         setBoard(Array(9).fill(null));
         setIsXNext(true);
         setGameStatus('playing');

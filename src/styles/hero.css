@@ -54,7 +54,30 @@
     font-family: var(--font-syne);
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.hero-keywords span {
+    transition: opacity var(--transition-fast);
+}
+
+.keyword-bio {
     color: var(--primary);
+}
+
+.keyword-ml {
+    color: var(--warning);
+}
+
+.keyword-bme {
+    color: #666;
+}
+
+.keyword-dl {
+    color: var(--warning);
+}
+
+.keyword-ai {
+    color: var(--destructive);
 }
 
 .hero-social {

@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
+const MEMORY_SYMBOLS = ['🧬', '🐍', '⚛️', '🔬', '💻', '🧠', '🌿', '📊'];
+
 const MemoryMatch = ({ onClose }) => {
-    const symbols = ['🧬', '🐍', '⚛️', '🔬', '💻', '🧠', '🌿', '📊'];
     
     const [cards, setCards] = useState([]);
     const [flipped, setFlipped] = useState([]);
@@ -14,7 +15,7 @@ const MemoryMatch = ({ onClose }) => {
     });
 
     const initGame = useCallback(() => {
-        const shuffled = [...symbols, ...symbols]
+        const shuffled = [...MEMORY_SYMBOLS, ...MEMORY_SYMBOLS]
             .sort(() => Math.random() - 0.5)
             .map((symbol, index) => ({ id: index, symbol, isFlipped: false }));
         setCards(shuffled);
@@ -29,7 +30,7 @@ const MemoryMatch = ({ onClose }) => {
     }, [initGame]);
 
     useEffect(() => {
-        if (matched.length === symbols.length * 2 && matched.length > 0) {
+        if (matched.length === MEMORY_SYMBOLS.length * 2 && matched.length > 0) {
             setGameWon(true);
             if (!bestMoves || moves < bestMoves) {
                 setBestMoves(moves);
@@ -41,10 +42,10 @@ const MemoryMatch = ({ onClose }) => {
     useEffect(() => {
         if (flipped.length === 2) {
             const [first, second] = flipped;
-            if (cards[first].symbol === cards[second].symbol) {
+            if (cards[first] && cards[second] && cards[first].symbol === cards[second].symbol) {
                 setMatched(prev => [...prev, first, second]);
                 setFlipped([]);
-            } else {
+            } else if (cards[first] && cards[second]) {
                 const timeout = setTimeout(() => {
                     setFlipped([]);
                 }, 800);

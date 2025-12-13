@@ -1,4 +1,3 @@
-import React from 'react';
 import GridImg from '../assets/images/Outline + fill  Square grid.svg';
 
 export default function BackgroundGrid() {

@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
+const QUOTES = [
+    "The only way to do great work is to love what you do.",
+    "Code is like humor. When you have to explain it, it's bad.",
+    "First, solve the problem. Then, write the code.",
+    "The best error message is the one that never shows up.",
+    "Programming isn't about what you know; it's about what you can figure out.",
+    "In biology, nothing makes sense except in the light of evolution.",
+    "Science is a way of thinking much more than it is a body of knowledge.",
+];
+
 const TypingSpeed = ({ onClose }) => {
-    const quotes = [
-        "The only way to do great work is to love what you do.",
-        "Code is like humor. When you have to explain it, it's bad.",
-        "First, solve the problem. Then, write the code.",
-        "The best error message is the one that never shows up.",
-        "Programming isn't about what you know; it's about what you can figure out.",
-        "In biology, nothing makes sense except in the light of evolution.",
-        "Science is a way of thinking much more than it is a body of knowledge.",
-    ];
 
     const [quote, setQuote] = useState('');
     const [input, setInput] = useState('');
@@ -22,9 +23,18 @@ const TypingSpeed = ({ onClose }) => {
         return saved ? parseInt(saved) : null;
     });
     const inputRef = useRef(null);
+    const timeoutRef = useRef(null);
+    
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     const getRandomQuote = useCallback(() => {
-        return quotes[Math.floor(Math.random() * quotes.length)];
+        return QUOTES[Math.floor(Math.random() * QUOTES.length)];
     }, []);
 
     const initGame = useCallback(() => {
@@ -49,7 +59,9 @@ const TypingSpeed = ({ onClose }) => {
     const startGame = () => {
         setGameState('playing');
         setStartTime(Date.now());
-        setTimeout(() => inputRef.current?.focus(), 50);
+        timeoutRef.current = setTimeout(() => {
+            inputRef.current?.focus();
+        }, 50);
     };
 
     const handleInputChange = (e) => {
