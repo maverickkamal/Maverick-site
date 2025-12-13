@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import HomeLayout from './components/layout/HomeLayout';
 import PageLayout from './components/layout/PageLayout';
 import Home from './pages/Home';
@@ -9,7 +10,8 @@ import Que from './pages/Que';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <Routes>
       <Route
         path="/"
         element={
@@ -51,6 +53,8 @@ function App() {
         }
       />
     </Routes>
+    <Analytics />
+    </>
   );
 }
 
