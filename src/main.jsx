@@ -12,6 +12,7 @@ import './styles/about.css'
 import './styles/projects.css'
 import './styles/articles.css'
 import './styles/que.css'
+import './styles/notfound.css'
 
 import App from './App.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'

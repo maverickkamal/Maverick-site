@@ -7,6 +7,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Articles from './pages/Articles';
 import Que from './pages/Que';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           </PageLayout>
         }
       />
+      <Route path="*" element={<NotFound />} />
     </Routes>
     <Analytics />
     </>
