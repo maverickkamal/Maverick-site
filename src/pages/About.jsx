@@ -4,9 +4,9 @@ const About = () => {
     const profileConfig = {
         imagePath: profilePic,
         name: 'Maverick',
-        role: 'maybe a dev?',
-        focus: 'Bioinformatics & AI (not sure yet)',
-        status: 'wanna go to University',
+        role: 'maybe a dev or med student?',
+        focus: 'not sure yet lol (obviously lying)',
+        status: 'wanna go to University (probably not)',
         motto: '"Versatility is cool"',
     };
 
@@ -90,7 +90,7 @@ const About = () => {
                         An 18 yrs old with obsession of building stuff. I love to code and learn new things.
                     </p>
                     <p>
-                        I have a strong drive for biology and technology in general. The intersection of the two is what fascinatess me ig.
+                        I have a strong drive for biology and technology in general. The intersection of the two is what fascinatess me (i sound like gpt here hehe).
                     </p>
                     <p>
                        uhh what else should I say? I'm just a normal guy who likes to code and build stuff.
