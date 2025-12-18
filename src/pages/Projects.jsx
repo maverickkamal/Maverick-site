@@ -6,7 +6,14 @@ const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('all');
 
     const categories = useMemo(() => {
-        const cats = new Set(projectsData.projects.map(p => p.category));
+        const cats = new Set();
+        projectsData.projects.forEach(p => {
+            if (Array.isArray(p.category)) {
+                p.category.forEach(cat => cats.add(cat));
+            } else if (p.category) {
+                cats.add(p.category);
+            }
+        });
         return ['all', ...Array.from(cats)];
     }, []);
 
@@ -20,7 +27,12 @@ const Projects = () => {
         });
 
         if (activeFilter !== 'all') {
-            projects = projects.filter(p => p.category === activeFilter);
+            projects = projects.filter(p => {
+                if (Array.isArray(p.category)) {
+                    return p.category.includes(activeFilter);
+                }
+                return p.category === activeFilter;
+            });
         }
 
         return projects;
