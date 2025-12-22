@@ -12,7 +12,6 @@ const ThemeToggle = ({ className = '' }) => {
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
             <div className="toggle-icons">
-                {/* Sun icon */}
                 <svg 
                     className={`toggle-icon sun ${theme === 'light' ? 'active' : ''}`}
                     width="20" 
@@ -34,7 +33,6 @@ const ThemeToggle = ({ className = '' }) => {
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
-                {/* Moon icon */}
                 <svg 
                     className={`toggle-icon moon ${theme === 'dark' ? 'active' : ''}`}
                     width="20" 

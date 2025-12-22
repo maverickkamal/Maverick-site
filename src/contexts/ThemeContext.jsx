@@ -10,12 +10,25 @@ export const useTheme = () => {
     return context;
 };
 
+const getThemeFromTime = () => {
+    const hour = new Date().getHours();
+    return hour >= 6 && hour < 20 ? 'light' : 'dark';
+};
+
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
-        // Check localStorage first, then system preference
+        const manualTheme = localStorage.getItem('theme-manual');
+        if (manualTheme) {
+            return manualTheme;
+        }
+        
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) return savedTheme;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (savedTheme) {
+            localStorage.setItem('theme-manual', savedTheme);
+            return savedTheme;
+        }
+        
+        return getThemeFromTime();
     });
 
     useEffect(() => {
@@ -24,14 +37,39 @@ export const ThemeProvider = ({ children }) => {
         localStorage.setItem('theme', theme);
     }, [theme]);
 
-    // Listen for system theme changes
+    useEffect(() => {
+        const checkTimeAndUpdateTheme = () => {
+            const manualTheme = localStorage.getItem('theme-manual');
+            if (!manualTheme) {
+                const timeBasedTheme = getThemeFromTime();
+                setTheme(timeBasedTheme);
+            }
+        };
+
+        checkTimeAndUpdateTheme();
+
+        const interval = setInterval(checkTimeAndUpdateTheme, 60 * 60 * 1000); 
+
+        const handleVisibilityChange = () => {
+            if (!document.hidden) {
+                checkTimeAndUpdateTheme();
+            }
+        };
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            clearInterval(interval);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, []);
+
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e) => {
-            const savedTheme = localStorage.getItem('theme');
-            // Only auto-switch if user hasn't manually set a preference
-            if (!savedTheme) {
-                setTheme(e.matches ? 'dark' : 'light');
+            const manualTheme = localStorage.getItem('theme-manual');
+            if (!manualTheme) {
+                const timeBasedTheme = getThemeFromTime();
+                setTheme(timeBasedTheme);
             }
         };
 
@@ -40,7 +78,9 @@ export const ThemeProvider = ({ children }) => {
     }, []);
 
     const toggleTheme = () => {
-        setTheme(prev => prev === 'light' ? 'dark' : 'light');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme-manual', newTheme);
     };
 
     const isDark = theme === 'dark';
