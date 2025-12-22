@@ -3,8 +3,7 @@ import TicTacToe from '../components/games/TicTacToe';
 import ReactionTime from '../components/games/ReactionTime';
 import MemoryMatch from '../components/games/MemoryMatch';
 import TypingSpeed from '../components/games/TypingSpeed';
-import XIcon from '../assets/images/X.png';
-import InstagramIcon from '../assets/images/Instagram.png';
+import { XIcon, InstagramIcon, DiscordIcon, EmailIcon } from '../components/icons';
 
 const FORMSUBMIT_EMAIL = import.meta.env.VITE_FORMSUBMIT_EMAIL;
 
@@ -175,35 +174,19 @@ const Que = () => {
                             <label>How to reach you</label>
                             <div className="contact-options">
                                 <div className="contact-option">
-                                    <img src={XIcon} alt="X" className="contact-icon" />
+                                    <XIcon size={24} className="contact-icon" />
                                     <input type="text" name="twitter" placeholder="@username" />
                                 </div>
                                 <div className="contact-option">
-                                    <img src={InstagramIcon} alt="Instagram" className="contact-icon" />
+                                    <InstagramIcon size={24} className="contact-icon" />
                                     <input type="text" name="instagram" placeholder="@username" />
                                 </div>
                                 <div className="contact-option">
-                                    <img 
-                                        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" 
-                                        alt="Discord" 
-                                        className="contact-icon"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.nextSibling.style.marginLeft = '0';
-                                        }}
-                                    />
+                                    <DiscordIcon size={24} className="contact-icon" />
                                     <input type="text" name="discord" placeholder="user#1234" />
                                 </div>
                                 <div className="contact-option">
-                                    <img 
-                                        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" 
-                                        alt="Email" 
-                                        className="contact-icon"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.nextSibling.style.marginLeft = '0';
-                                        }}
-                                    />
+                                    <EmailIcon size={24} className="contact-icon" />
                                     <input type="email" name="email" placeholder="email@example.com" />
                                 </div>
                             </div>

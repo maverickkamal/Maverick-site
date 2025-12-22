@@ -1,7 +1,6 @@
 import TitleSvg from '../components/TitleSvg';
 import SocialLinks from '../components/common/SocialLinks';
-import ShapesDesktop from '../assets/images/shapes.svg';
-import ShapesMobile from '../assets/images/shapesMobile.svg';
+import { Shapes, ShapesMobile } from '../components/decorative';
 
 const Home = () => {
     return (
@@ -33,14 +32,8 @@ const Home = () => {
             </div>
 
             <div className="hero-shapes-wrapper">
-                <picture>
-                    <source media="(max-width: 768px)" srcSet={ShapesMobile} />
-                    <img
-                        src={ShapesDesktop}
-                        alt="Decorative Shapes"
-                        className="hero-shapes"
-                    />
-                </picture>
+                <Shapes className="hero-shapes hero-shapes-desktop" />
+                <ShapesMobile className="hero-shapes hero-shapes-mobile" />
             </div>
         </section>
     );

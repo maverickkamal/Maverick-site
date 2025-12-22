@@ -29,13 +29,17 @@
 .error-reset-btn {
     padding: var(--spacing-md) var(--spacing-lg);
     background: var(--primary);
-    color: var(--background);
+    color: var(--primary-text);
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    transition: opacity var(--transition-normal);
+    transition: opacity var(--transition-normal), background var(--transition-fast), color var(--transition-fast);
+}
+
+.error-reset-btn:hover {
+    background: var(--primary-hover);
 }
 
 .error-reset-btn:hover {
@@ -165,11 +169,11 @@
 
 .btn-primary {
     background-color: var(--primary);
-    color: white;
+    color: var(--primary-text);
 }
 
 .btn-primary:hover {
-    background-color: #005530;
+    background-color: var(--primary-hover);
     transform: translateY(-1px);
 }
 
@@ -252,13 +256,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     pointer-events: none;
     z-index: 1;
     opacity: 0.4;
     animation: gridDrift 60s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.background-grid .grid-svg {
+    width: 100%;
+    height: 100%;
+    min-width: 1440px;
+    min-height: 1086px;
 }
 
 @keyframes gridDrift {

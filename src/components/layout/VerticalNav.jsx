@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../common/Logo';
+import ThemeToggle from '../ui/ThemeToggle';
 import styles from './VerticalNav.module.css';
 
 const VerticalNav = ({ isOpen, toggle }) => {
@@ -14,12 +15,15 @@ const VerticalNav = ({ isOpen, toggle }) => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <div className={`${styles.logoWrapper} ${isOpen ? styles.open : ''}`}>
-          <Logo
-            isOpen={isOpen}
-            onClick={toggle}
-            className={styles.logoToggle}
-          />
+        <div className={styles.headerTop}>
+          <div className={`${styles.logoWrapper} ${isOpen ? styles.open : ''}`}>
+            <Logo
+              isOpen={isOpen}
+              onClick={toggle}
+              className={styles.logoToggle}
+            />
+          </div>
+          <ThemeToggle className={styles.themeToggle} />
         </div>
 
         <nav className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>

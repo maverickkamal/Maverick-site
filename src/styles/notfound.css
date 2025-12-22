@@ -108,7 +108,7 @@
 
 .not-found-btn.primary {
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     border: 2px solid var(--primary);
 }
 

@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import HomeLayout from './components/layout/HomeLayout';
 import PageLayout from './components/layout/PageLayout';
 import Home from './pages/Home';
@@ -11,52 +12,52 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <Routes>
-      <Route
-        path="/"
-        element={
-          <HomeLayout>
-            <Home />
-          </HomeLayout>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <PageLayout>
-            <About />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/projects"
-        element={
-          <PageLayout>
-            <Projects />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/articles"
-        element={
-          <PageLayout>
-            <Articles />
-          </PageLayout>
-        }
-      />
-      <Route
-        path="/que"
-        element={
-          <PageLayout>
-            <Que />
-          </PageLayout>
-        }
-      />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-    <Analytics />
-    </>
+        <Route
+          path="/"
+          element={
+            <HomeLayout>
+              <Home />
+            </HomeLayout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageLayout>
+              <About />
+            </PageLayout>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <PageLayout>
+              <Projects />
+            </PageLayout>
+          }
+        />
+        <Route
+          path="/articles"
+          element={
+            <PageLayout>
+              <Articles />
+            </PageLayout>
+          }
+        />
+        <Route
+          path="/que"
+          element={
+            <PageLayout>
+              <Que />
+            </PageLayout>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Analytics />
+    </ThemeProvider>
   );
 }
 

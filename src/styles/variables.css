@@ -5,6 +5,22 @@
     --destructive: #C91F1F;
     --warning: #8A5500;
     --border: #BFBFBF;
+    /* Grid colors */
+    --main-fill: #FFFFFF;
+    --grid-border: #EBEBEB;
+    --random-grid1: #F7F7F7;
+    --random-grid2: #F2F2F2;
+    /* Card colors */
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-bg-solid: #FFFFFF;
+    --card-hover-shadow: rgba(0, 0, 0, 0.1);
+    --primary-alpha: rgba(0, 107, 61, 0.1);
+    --primary-alpha-hover: rgba(0, 107, 61, 0.2);
+    --warning-alpha: rgba(138, 85, 0, 0.1);
+    --warning-alpha-hover: rgba(138, 85, 0, 0.2);
+    /* Button text colors */
+    --primary-text: #FFFFFF;
+    --primary-hover: #005530;
     --font-outfit: 'Outfit', sans-serif;
     --font-work-sans: 'Work Sans', sans-serif;
     --font-syne: 'Syne', sans-serif;
@@ -24,6 +40,33 @@
     --radius-lg: 12px;
     --radius-full: 9999px;
 }
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --background: #1A1A1A;
+    --foreground: #F7F4ED;
+    --primary: #7CB89A;
+    --destructive: #FF6B6B;
+    --warning: #FFB84D;
+    --border: #404040;
+    /* Grid colors */
+    --main-fill: #121212;
+    --grid-border: #383838;
+    --random-grid1: #1E1E1E;
+    --random-grid2: #2c2c2c;
+    /* Card colors */
+    --card-bg: rgba(40, 40, 40, 0.8);
+    --card-bg-solid: #2A2A2A;
+    --card-hover-shadow: rgba(0, 0, 0, 0.3);
+    --primary-alpha: rgba(124, 184, 154, 0.15);
+    --primary-alpha-hover: rgba(124, 184, 154, 0.25);
+    --warning-alpha: rgba(255, 184, 77, 0.15);
+    --warning-alpha-hover: rgba(255, 184, 77, 0.25);
+    /* Button text colors */
+    --primary-text: #1A1A1A;
+    --primary-hover: #6AA689;
+}
+
 
 /* Responsive Breakpoints (as comments for reference)
    --breakpoint-sm: 640px

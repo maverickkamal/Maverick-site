@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../common/Logo';
+import ThemeToggle from '../ui/ThemeToggle';
 import useMenuState from '../../hooks/useMenuState';
 import styles from './HorizontalNav.module.css';
 
@@ -17,12 +18,15 @@ const HorizontalNav = () => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <div className={styles.logoWrapper}>
-          <Logo
-            isOpen={isOpen}
-            onClick={toggle}
-            className={styles.logoToggle}
-          />
+        <div className={styles.headerTop}>
+          <div className={styles.logoWrapper}>
+            <Logo
+              isOpen={isOpen}
+              onClick={toggle}
+              className={styles.logoToggle}
+            />
+          </div>
+          <ThemeToggle className={styles.themeToggle} />
         </div>
 
         <nav className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>

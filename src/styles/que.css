@@ -12,11 +12,12 @@
 }
 
 .que-section {
-    background: rgba(247, 244, 237, 0.8);
+    background: var(--card-bg);
     border: 2px solid var(--border);
     border-radius: var(--radius-md);
     padding: var(--spacing-xl);
     position: relative;
+    transition: background var(--transition-normal);
 }
 
 .bulletin-card {
@@ -78,18 +79,19 @@
     padding: var(--spacing-md);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    background: rgba(255,255,255,0.7);
+    background: var(--card-bg-solid);
+    color: var(--foreground);
     font-family: var(--font-outfit);
     font-size: 0.9rem;
     resize: vertical;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-normal);
 }
 
 .que-form textarea:focus,
 .que-form input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0,107,61,0.1);
+    box-shadow: 0 0 0 3px var(--primary-alpha);
 }
 
 .honeypot {
@@ -100,18 +102,18 @@
 .submit-btn {
     padding: var(--spacing-md) var(--spacing-lg);
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     border: none;
     border-radius: var(--radius-sm);
     font-family: var(--font-outfit);
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: background var(--transition-fast), transform var(--transition-fast);
+    transition: background var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
 }
 
 .submit-btn:hover:not(:disabled) {
-    background: #005530;
+    background: var(--primary-hover);
     transform: translateY(-1px);
 }
 
@@ -193,7 +195,7 @@
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-lg);
-    background: rgba(255,255,255,0.8);
+    background: var(--card-bg);
     border: 2px solid var(--border);
     border-radius: var(--radius-md);
     cursor: pointer;
@@ -203,7 +205,7 @@
 .game-card:hover {
     border-color: var(--primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px var(--card-hover-shadow);
 }
 
 .game-icon {
@@ -211,12 +213,11 @@
     height: 48px;
     object-fit: contain;
     color: var(--foreground);
-    filter: brightness(0) saturate(100%) invert(8%) sepia(4%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(95%);
     transition: filter var(--transition-fast), color var(--transition-fast);
 }
 
 .game-card:hover .game-icon {
-    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(2000%) hue-rotate(120deg) brightness(0.4) contrast(1.2);
+    color: var(--primary);
 }
 
 .game-icon svg {
@@ -240,7 +241,7 @@
 
 .current-question {
     padding: var(--spacing-md);
-    background: rgba(0,107,61,0.05);
+    background: var(--primary-alpha);
     border-left: 3px solid var(--primary);
     border-radius: var(--radius-sm);
 }
@@ -256,7 +257,7 @@
 
 .opinion-item {
     padding: var(--spacing-sm) var(--spacing-md);
-    background: rgba(255,255,255,0.6);
+    background: var(--card-bg);
     border-radius: var(--radius-sm);
     font-size: 0.85rem;
     position: relative;
@@ -378,7 +379,7 @@
 }
 
 .tictactoe-cell:hover:not(:disabled) {
-    background: rgba(0,107,61,0.05);
+    background: var(--primary-alpha);
 }
 
 .tictactoe-cell:disabled {
@@ -586,7 +587,7 @@
     color: var(--foreground);
     opacity: 0.7;
     padding: var(--spacing-lg);
-    background: rgba(0,0,0,0.03);
+    background: var(--primary-alpha);
     border-radius: var(--radius-md);
     margin-bottom: var(--spacing-lg);
 }
@@ -601,7 +602,7 @@
     font-size: 1.2rem;
     line-height: 2;
     padding: var(--spacing-lg);
-    background: rgba(0,0,0,0.03);
+    background: var(--primary-alpha);
     border-radius: var(--radius-md);
     font-family: monospace;
 }
@@ -620,12 +621,12 @@
 }
 
 .typing-quote .char.current {
-    background: rgba(0,107,61,0.2);
+    background: var(--primary-alpha-hover);
     animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
-    0%, 50% { background: rgba(0,107,61,0.2); }
+    0%, 50% { background: var(--primary-alpha-hover); }
     51%, 100% { background: transparent; }
 }
 
@@ -636,7 +637,9 @@
     border-radius: var(--radius-md);
     font-size: 1rem;
     font-family: monospace;
-    transition: border-color var(--transition-fast);
+    background: var(--card-bg-solid);
+    color: var(--foreground);
+    transition: border-color var(--transition-fast), background var(--transition-normal);
 }
 
 .typing-input:focus {

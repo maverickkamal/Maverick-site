@@ -1,6 +1,6 @@
 import useMenuState from '../../hooks/useMenuState';
 import VerticalNav from './VerticalNav';
-import BackgroundGrid from '../BackgroundGrid';
+import { BackgroundGrid } from '../decorative';
 
 
 const HomeLayout = ({ children }) => {

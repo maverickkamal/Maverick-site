@@ -1,6 +1,8 @@
 import profilePic from '../assets/images/profile_pic.png';
+import { useTheme } from '../contexts/ThemeContext';
 
 const About = () => {
+    const { theme } = useTheme();
     const profileConfig = {
         imagePath: profilePic,
         name: 'Maverick',
@@ -12,6 +14,8 @@ const About = () => {
 
     const githubUsername = 'maverickkamal';
     const hackatimeUsername = '981';
+    const hackatimeTheme = theme === 'dark' ? 'gruvbox' : 'solarized-light';
+    const hackatimeStatsUrl = `https://github-readme-stats.hackclub.dev/api/wakatime?username=${hackatimeUsername}&api_domain=hackatime.hackclub.com&&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8&theme=${hackatimeTheme}`;
 
     const frameworkIcons = {
         'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
@@ -132,9 +136,10 @@ const About = () => {
                         rel="noopener noreferrer"
                     >
                         <img 
-                            src="https://github-readme-stats.hackclub.dev/api/wakatime?username=981&api_domain=hackatime.hackclub.com&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8&theme=solarized-light"
+                            src={hackatimeStatsUrl}
                             alt="Hackatime Stats"
                             className="hackatime-stats-card"
+                            key={hackatimeTheme}
                         />
                     </a>
                     <p className="activity-link">

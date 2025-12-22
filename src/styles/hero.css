@@ -69,7 +69,7 @@
 }
 
 .keyword-bme {
-    color: #666;
+    color: var(--border);
 }
 
 .keyword-dl {
@@ -102,6 +102,7 @@
     content: '';
 }
 
+/* Shapes styling */
 .hero-shapes {
     position: absolute;
     top: 233px;
@@ -110,10 +111,24 @@
     opacity: 0.8;
     pointer-events: none;
     z-index: 1;
+    transition: opacity var(--transition-normal);
+}
+
+.hero-shapes-desktop {
+    display: block;
+}
+
+.hero-shapes-mobile {
+    display: none;
 }
 
 @media (max-width: 768px) {
-    .hero-shapes {
+    .hero-shapes-desktop {
+        display: none;
+    }
+
+    .hero-shapes-mobile {
+        display: block;
         top: 50%;
         left: 50%;
         right: auto;
@@ -156,4 +171,3 @@
         margin-top: var(--spacing-md);
     }
 }
-

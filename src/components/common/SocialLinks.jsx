@@ -1,33 +1,26 @@
-import GitHubIcon from '../../assets/images/GitHub.png';
-import InstagramIcon from '../../assets/images/Instagram.png';
-import XIcon from '../../assets/images/X.png';
+import { GitHubIcon, InstagramIcon, XIcon } from '../icons';
 
 const SocialLinks = ({ size = 32, className = '' }) => {
-    const iconStyle = {
-        width: `${size}px`,
-        height: `${size}px`,
-    };
-
     const socialLinks = [
         {
             name: 'GitHub',
             username: 'maverickkamal',
             url: 'https://github.com/maverickkamal',
-            icon: GitHubIcon,
+            Icon: GitHubIcon,
             ariaLabel: 'Visit GitHub profile'
         },
         {
             name: 'Instagram',
             username: 'maverickkamal_',
             url: 'https://instagram.com/maverickkamal_',
-            icon: InstagramIcon,
+            Icon: InstagramIcon,
             ariaLabel: 'Visit Instagram profile'
         },
         {
             name: 'X',
             username: 'mav3rickism',
             url: 'https://x.com/mav3rickism',
-            icon: XIcon,
+            Icon: XIcon,
             ariaLabel: 'Visit X (Twitter) profile'
         }
     ];
@@ -43,7 +36,7 @@ const SocialLinks = ({ size = 32, className = '' }) => {
                     aria-label={social.ariaLabel}
                     className="social-link"
                 >
-                    <img src={social.icon} alt={social.name} style={iconStyle} />
+                    <social.Icon size={size} className="social-icon" />
                     <span className="social-username">{social.username}</span>
                 </a>
             ))}
@@ -52,4 +45,3 @@ const SocialLinks = ({ size = 32, className = '' }) => {
 };
 
 export default SocialLinks;
-

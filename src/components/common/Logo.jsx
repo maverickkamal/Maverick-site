@@ -1,5 +1,4 @@
-import FullLogo from '../../assets/images/Full logo.svg';
-import LogoOutline from '../../assets/images/Logo Outline.svg';
+import { FullLogoSvg, LogoOutlineSvg } from '../icons';
 import styles from './Logo.module.css';
 
 const Logo = ({ isOpen, onClick, className = '' }) => {
@@ -10,17 +9,19 @@ const Logo = ({ isOpen, onClick, className = '' }) => {
             role="button"
             tabIndex={0}
             aria-label={isOpen ? "Close menu" : "Open menu"}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onClick?.();
+                }
+            }}
         >
-            <img
-                src={LogoOutline}
-                alt="Maverick Logo"
-                className={`${styles.logoImage} ${styles.logoOutline} ${isOpen ? styles.hidden : ''}`}
-            />
-            <img
-                src={FullLogo}
-                alt="Maverick Logo"
-                className={`${styles.logoImage} ${styles.logoFull} ${isOpen ? styles.visible : ''}`}
-            />
+            <div className={`${styles.logoImage} ${styles.logoOutline} ${isOpen ? styles.hidden : ''}`}>
+                <LogoOutlineSvg />
+            </div>
+            <div className={`${styles.logoImage} ${styles.logoFull} ${isOpen ? styles.visible : ''}`}>
+                <FullLogoSvg />
+            </div>
         </div>
     );
 };

@@ -11,6 +11,13 @@
   position: relative;
 }
 
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .logoWrapper {
   position: relative;
   z-index: 50;
@@ -20,6 +27,10 @@
 
 .logoWrapper.open {
   margin-bottom: 1rem;
+}
+
+.themeToggle {
+  flex-shrink: 0;
 }
 
 .navMenu {

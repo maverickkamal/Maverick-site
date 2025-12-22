@@ -1,0 +1,78 @@
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--foreground);
+    transition: all var(--transition-normal);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--background);
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.toggle-icons {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all var(--transition-normal);
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.toggle-icon.active {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.toggle-icon.sun.active {
+    animation: sunRise 0.4s ease-out;
+}
+
+.toggle-icon.moon.active {
+    animation: moonRise 0.4s ease-out;
+}
+
+@keyframes sunRise {
+    0% {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes moonRise {
+    0% {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+

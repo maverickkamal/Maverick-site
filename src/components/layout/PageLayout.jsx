@@ -1,5 +1,5 @@
 import HorizontalNav from './HorizontalNav';
-import BackgroundGrid from '../BackgroundGrid';
+import { BackgroundGrid } from '../decorative';
 
 const PageLayout = ({ children }) => {
   return (
