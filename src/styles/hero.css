@@ -102,6 +102,19 @@
     content: '';
 }
 
+.hero-webring {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.webring-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Shapes styling */
 .hero-shapes {
     position: absolute;

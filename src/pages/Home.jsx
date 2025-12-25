@@ -1,5 +1,6 @@
 import TitleSvg from '../components/TitleSvg';
 import SocialLinks from '../components/common/SocialLinks';
+import WebringLink from '../components/common/WebringLink';
 import { Shapes, ShapesMobile } from '../components/decorative';
 
 const Home = () => {
@@ -29,6 +30,10 @@ const Home = () => {
                 <blockquote className="hero-quote">
                     "Human life is more important than politics, religion or culture"
                 </blockquote>
+
+                <div className="hero-webring">
+                    <WebringLink />
+                </div>
             </div>
 
             <div className="hero-shapes-wrapper">
