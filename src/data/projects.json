@@ -46,7 +46,7 @@
             "link": "https://github.com/maverickkamal/wordcraft-lexical",
             "liveDemo": "https://wordcraft-lexical.vercel.app/",
             "languagesUsed": ["Typescript", "JavaScript", "CSS"],
-            "image": "https://private-user-images.githubusercontent.com/150486956/527855505-48c5d532-f85b-4cee-a962-5211a9af5035.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjYwMjA1ODAsIm5iZiI6MTc2NjAyMDI4MCwicGF0aCI6Ii8xNTA0ODY5NTYvNTI3ODU1NTA1LTQ4YzVkNTMyLWY4NWItNGNlZS1hOTYyLTUyMTFhOWFmNTAzNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjE4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIxOFQwMTExMjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kZjUxOTMzYzgzM2JhOGVlZGQ5YmY4Y2M1MzhiZWY0ZTg4NWM4MzJlY2RmZjZhNjNhZmVkYzdhZDI0MmVkZjM2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.E8y6svfc7c-gGSRoAR23r93H615t9uTcvSVQJX62uFA",
+            "image": "https://github.com/user-attachments/assets/48c5d532-f85b-4cee-a962-5211a9af5035",
             "featured": true,
             "status": "active",
             "year": 2025,
@@ -59,11 +59,63 @@
             "link": "https://github.com/maverickkamal/Veritaminal",
             "liveDemo": "https://pypi.org/project/veritaminal/",
             "languagesUsed": ["Python"],
-            "image": "https://private-user-images.githubusercontent.com/150486956/527856478-216e5746-8fc2-4b9e-8744-ec2675b3fd58.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjYwMjA4NjUsIm5iZiI6MTc2NjAyMDU2NSwicGF0aCI6Ii8xNTA0ODY5NTYvNTI3ODU2NDc4LTIxNmU1NzQ2LThmYzItNGI5ZS04NzQ0LWVjMjY3NWIzZmQ1OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjE4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIxOFQwMTE2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNDdjN2E1M2YxN2JlNjQ2ZmU0NjBhM2RkMDFhZmNhNjZkMGRmYWFhOWMyYzhjODI5YmIyNGRmNzI0NDIyN2E4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ZA6MkibgMYokS-IWz2wDuAlNTYYw60LL64xd6bRWVpE",
+            "image": "https://github.com/user-attachments/assets/216e5746-8fc2-4b9e-8744-ec2675b3fd58",
             "featured": true,
             "status": "active",
             "year": 2025,
             "category": ["game", "ai", "terminal"]
+          },
+          {
+            "id": "id-6",
+            "name": "Personas: ZENTiDE",
+            "about": "Zentide uniquely guides your path to self-growth and purpose by revealing AI-powered insights personalized to your DNA, chronorhythm, and higher consciousness through an integrated framework of neural networks, ancient wisdoms and bio-algorithms.",
+            "link": "https://github.com/maverickkamal/Personas",
+            "liveDemo": "https://zentide.streamlit.app/",
+            "languagesUsed": ["Python", "CSS"],
+            "image": "",
+            "featured": false,
+            "status": "archived",
+            "year": 2024,
+            "category": ["ai", "web"]
+          },
+          {
+            "id": "id-7",
+            "name": "Automation Team Poject",
+            "about": "This project addresses the challenge of optimally grouping incoming interns at Nobel Learning PCB to enhance their internship experience",
+            "link": "https://github.com/maverickkamal/Automation-team",
+            "liveDemo": "",
+            "languagesUsed": ["Python", "Machine Learning", "Deep Learning"],
+            "image": "",
+            "featured": true,
+            "status": "completed",
+            "year": 2023,
+            "category": ["machine learning", "deep learning", "ai"]
+          },
+          {
+            "id": "id-8",
+            "name": "Scio Planning",
+            "about": "Scio AI Planner is an advanced, AI-powered study and schedule management tool designed to revolutionize the way students organize their academic lives",
+            "link": "https://github.com/maverickkamal/scio-planning",
+            "liveDemo": "https://scio-planning.vercel.app/",
+            "languagesUsed": ["Typescript", "JavaScript", "CSS"],
+            "image": "https://github.com/user-attachments/assets/a5d80169-b084-4456-9326-7775cc56cb82",
+            "featured": false,
+            "status": "archived",
+            "year": 2024,
+            "category": ["ai", "web"]
+          },
+          {
+            "id": "id-9",
+            "name": "The File System Dungeon",
+            "about": "File System Dungeon is a terminal-based RPG where your folders are rooms, files are enemies, and your hard drive is the world map",
+            "link": "https://github.com/maverickkamal/File-System-Dungeon",
+            "liveDemo": "",
+            "languagesUsed": ["Python"],
+            "image": "https://github.com/user-attachments/assets/ff68092d-a26d-477a-b391-f55e5a555025",
+            "featured": false,
+            "status": "active",
+            "year": 2025,
+            "category": ["game", "terminal"]
           }
     ]
 }
